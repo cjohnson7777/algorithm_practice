@@ -4,17 +4,32 @@ def binary_search(arr, target):
     high = len(arr) - 1
 
     while low <= high:
-        middle = (low + high) // 2
+        middle = int((low + high) // 2)
         if arr[middle] == target:
             return middle
         elif arr[middle] > target:
-            high = middle
+            high = middle - 1
         elif arr[middle] < target:
-            low = middle
+            low = middle + 1
+    return -1
+
+
+def search(nums, target):
+    low = 0
+    high = len(nums) - 1
+
+    while low <= high:
+        middle = int((low + high) // 2)
+        if nums[middle] == target:
+            return middle
+        elif nums[middle] < target:
+            low = middle + 1
+        elif nums[middle] > target:
+            high = middle - 1
     return -1
 
 
 numbers = [2,3,5,6,7,8,23,45,65,101]
 target = 2
 
-print(binary_search(numbers, target))
+print(search(numbers, target))
