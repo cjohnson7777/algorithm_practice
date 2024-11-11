@@ -45,8 +45,33 @@ def has_path_breadth_two(graph, src, dst):
     
     return False
 
+#depth first has path practice recursive #1
+def has_path_depth_two(graph, src, dst):
+    if src == dst:
+        return True
+    
+    for neighbor in graph[src]:
+        if has_path_depth_two(graph, neighbor, dst) == True:
+            return True
+    return False
+        
+
+#depth first has path practice iterative #1
+def has_path_depth_three(graph, src, dst):
+    stack = [src]
+
+    while stack:
+        current = stack.pop(0)
+        if current == dst:
+            return True
+        for neighbor in graph[current]:
+            stack.append(neighbor)
+    return False
+
 
 
 #print(has_path_depth(graph, 'f', 'k'))
 #print(has_path_breadth(graph, 'f', 'k'))
-print(has_path_breadth_two(graph, 'f', 'k'))
+#print(has_path_breadth_two(graph, 'f', 'k'))
+#print(has_path_depth_two(graph, 'f', 'k'))
+print(has_path_depth_three(graph, 'f', 'j'))
