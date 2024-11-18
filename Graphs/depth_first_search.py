@@ -48,6 +48,14 @@ def recursive_depth_first_search_practice_one(graph, source):
     for neighbor in graph[source]:
         recursive_depth_first_search_practice_one(graph, neighbor)
 
+
+def recursive_depth_first_search_practice_two(graph, source):
+    print(source)
+    for neighbor in graph[source]:
+        recursive_depth_first_search_practice_two(graph, neighbor)
+
+
+
 print('\t Recursive')
 #recursive_depth_first_print(graph, 'a')
 print('\t Iterative')

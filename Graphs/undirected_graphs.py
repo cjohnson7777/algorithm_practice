@@ -18,7 +18,8 @@ def build_graph(edges):
             graph[b] = []
         graph[a].append(b)
         graph[b].append(a)
-    return graph        
+
+    return graph  
 
 #traversal through path gaurding against infinit loops 
 def has_path(graph, src, dst, visited):
@@ -42,4 +43,4 @@ def undirected_path(edges, nodeA, nodeB):
     graph = build_graph(edges)
     return has_path(graph, nodeA, nodeB, set())
 
-print(undirected_path(edges, 'f', 'k'))
+print(undirected_path(edges, 'i', 'k'))
