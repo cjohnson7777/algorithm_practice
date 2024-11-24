@@ -55,10 +55,29 @@ def recursive_depth_first_search_practice_two(graph, source):
         recursive_depth_first_search_practice_two(graph, neighbor)
 
 
+def recursive_depth_first_search_practice_three(graph, source):
+    print(source)
+    for neighbor in graph[source]:
+        recursive_depth_first_search_practice_three(graph, neighbor)
+
+
+def iterative_depth_first_search_practice_two(graph, source):
+    stack = [source]
+    
+    while stack:
+        current = stack.pop()
+        print(current)
+        for neighbor in graph[current]:
+            stack.append(neighbor)
+
+
+
 
 print('\t Recursive')
 #recursive_depth_first_print(graph, 'a')
 print('\t Iterative')
 #iterative_depth_first_print(graph, 'a')
 #recursive_depth_first_search_practice_one(graph, 'a')
-print(graph)
+#print(graph)
+#recursive_depth_first_search_practice_three(graph, 'a')
+iterative_depth_first_search_practice_two(graph, 'a')
