@@ -49,10 +49,19 @@ def breadth_first_search_three(graph, source):
             queue.append(neighbor)
 
 
+def breadth_first_search_four(graph, source):
+    queue = [source]
+
+    while queue:
+        current = queue.pop(0)
+        print(current)
+        for neighbor in graph[current]:
+            queue.append(neighbor)
+
 
 
 #breadth_first_print(graph, 'a')
 # print('\t Practice')
 #breadth_first_search(graph, 'a')
-breadth_first_search_three(graph, 'a')
+breadth_first_search_four(graph, 'a')
     

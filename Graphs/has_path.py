@@ -68,10 +68,24 @@ def has_path_depth_three(graph, src, dst):
             stack.append(neighbor)
     return False
 
+#has path depth recursive practice #2
+def has_path_depth_four(graph, src, dst):
+    if src == dst:
+        return True
+    
+    for neighbor in graph[src]:
+        if has_path_depth_four(graph, neighbor, dst) == True:
+            return True
+    
+    return False
+
+
+
+
 
 
 #print(has_path_depth(graph, 'f', 'k'))
 #print(has_path_breadth(graph, 'f', 'k'))
 #print(has_path_breadth_two(graph, 'f', 'k'))
 #print(has_path_depth_two(graph, 'f', 'k'))
-print(has_path_depth_three(graph, 'f', 'j'))
+print(has_path_depth_four(graph, 'f', 'j'))
