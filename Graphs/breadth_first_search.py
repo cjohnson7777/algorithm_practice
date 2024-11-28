@@ -58,6 +58,14 @@ def breadth_first_search_four(graph, source):
         for neighbor in graph[current]:
             queue.append(neighbor)
 
+def breadth_first_search_five(graph, source):
+    queue = []
+
+    while queue:
+        current = queue.pop(0)
+        print(current)
+        for neighbor in graph[current]:
+            queue.append(neighbor)
 
 
 #breadth_first_print(graph, 'a')

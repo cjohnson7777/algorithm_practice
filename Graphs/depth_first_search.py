@@ -87,6 +87,11 @@ def iterative_depth_first_search_practice_three(graph, source):
             stack.append(neighbor)
 
 
+def  recursive_depth_first_search_practice_five(graph, source):
+    print(source)
+
+    for neighbor in graph[source]:
+        recursive_depth_first_search_practice_five(neighbor, source)
 
 
 print('\t Recursive')
