@@ -21,34 +21,6 @@ def build_graph(edges):
 
     return graph 
 
-#build graph practice #1
-def build_graph_two(edges):
-    graph = {}
-
-    for a, b in edges:
-        if a not in graph:
-            graph[a] = []
-        if b not in graph:
-            graph[b] = []
-        graph[a].append(b)
-        graph[b].append(a)
-
-    return graph 
-
-#build graph practice #2
-def build_graph_three(edges):
-    graph = {}
-
-    for a, b in edges:
-        if a not in graph:
-            graph[a] = []
-        if b not in graph:
-            graph[b] = []
-        graph[a].append(b)
-        graph[b].append(a)
-
-    return graph
-
 
 #traversal through path gaurding against infinit loops 
 def has_path(graph, src, dst, visited):
