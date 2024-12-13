@@ -32,3 +32,25 @@ def explore(graph, current, visited):
     return True
 
 print(connected_components_count(graph))
+
+
+def connected_components_practice_2(graph):
+    count = 0
+    visited = set()
+
+    for node in graph:
+        if explore_practice_2(graph, node, visited) == True:
+            count += 1
+    
+    return count
+
+def explore_practice_2(graph, current, visited):
+    if current in visited:
+        return False
+    
+    visited.add(current)
+
+    for neighbor in graph[current]:
+        explore_practice_2(graph, neighbor, visited)
+    
+    return True
