@@ -90,6 +90,17 @@ def has_path_depth_five(graph, src, dst):
     return False
 
 
+def has_path_depth_six(graph, src, dst):
+    if src == dst:
+        return True
+    
+    for neighbor in graph[src]:
+        if has_path_depth_six(graph, neighbor, dst) == True:
+            return True
+
+    return False
+
+
 
 
 

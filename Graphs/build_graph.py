@@ -40,11 +40,28 @@ def build_graph_four(edges):
     graph = {}
 
     for a, b in edges:
-        if a not in edges:
+        if a not in graph:
             graph[a] = []
-        if b not in edges:
+        if b not in graph:
             graph[b] = []
         graph[a].append(b)
         graph[b].append(a)
     
     return graph
+
+def build_graph_five(edges):
+    graph = {}
+
+    for a, b in edges:
+        if a not in graph:
+            graph[a] = []
+        if b not in graph:
+            graph[b] = []
+        
+        graph[a].append(b)
+        graph[b].append(a)
+
+    return graph
+
+
+
