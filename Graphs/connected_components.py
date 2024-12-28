@@ -1,3 +1,6 @@
+from itertools import count
+
+
 graph = {
     0: [8, 1, 5],
     1: [0],
@@ -9,6 +12,7 @@ graph = {
 }
 
 
+#connected components count 1
 def connected_components_count(graph):
     visited = set()
     count = 0
@@ -34,7 +38,7 @@ def explore(graph, current, visited):
 
 print('Correct: ',connected_components_count(graph))
 
-
+#connected components count 2
 def connected_components_practice_2(graph):
     count = 0
     visited = set()
@@ -56,6 +60,7 @@ def explore_practice_2(graph, current, visited):
     
     return True
 
+#connected components count 3
 def connected_components_count_practice3(graph):
     visited = set()
     count = 0
@@ -78,7 +83,7 @@ def explore_practice_3(graph, current, visited):
     
     return True
     
-
+#connected components count 4
 def connected_components_count_4(graph):
     visited = set()
     count = 0
@@ -101,5 +106,28 @@ def explore_practice_4(graph, current, visited):
     
     return True
 
+#connected components count 5
+def connected_components_count_5(graph):
+    visted = set()
+    count = 0
 
-print(connected_components_count_4(graph))
+    for node in graph:
+       if explore_practice_5(graph, node, visted) == True:
+           count += 1
+    
+    return count
+       
+
+def explore_practice_5(graph, current, visited):
+    if current in visited:
+        return False
+    
+    visited.add(current)
+    
+    for neighbor in graph[current]:
+        explore_practice_5(graph, neighbor, visited)
+    
+    return True
+
+
+print('Practice: ', connected_components_count_5(graph))

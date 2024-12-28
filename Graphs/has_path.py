@@ -1,3 +1,6 @@
+import grp
+
+
 graph = {
     'f': ['g', 'i'],
     'g': ['h'],
@@ -31,7 +34,7 @@ def has_path_breadth(graph, src, dst):
     
     return False
 
-#breadth first has_path practice #1
+#breadth first has_path practice #2
 def has_path_breadth_two(graph, src, dst):
     queue = [src]
 
@@ -45,7 +48,7 @@ def has_path_breadth_two(graph, src, dst):
     
     return False
 
-#depth first has path practice recursive #1
+#depth first has path practice recursive #2
 def has_path_depth_two(graph, src, dst):
     if src == dst:
         return True
@@ -79,6 +82,7 @@ def has_path_depth_four(graph, src, dst):
     
     return False
 
+#has path depth recursive practice #5
 def has_path_depth_five(graph, src, dst):
     if src == dst:
         return True
@@ -89,7 +93,7 @@ def has_path_depth_five(graph, src, dst):
     
     return False
 
-
+#has path depth recursive practice #6
 def has_path_depth_six(graph, src, dst):
     if src == dst:
         return True
@@ -100,12 +104,20 @@ def has_path_depth_six(graph, src, dst):
 
     return False
 
+#has path depth recursive practice #7
+def has_path_depth_seven(graph, src, dst):
+    if src == dst:
+        return True
+    
+    for neighbor in graph[src]:
+        if has_path_depth_seven(graph, neighbor, dst) == True:
+            return True
+        
+    return False
+    
 
 
 
-
-#print(has_path_depth(graph, 'f', 'k'))
+print('Correct: ', has_path_depth(graph, 'f', 'k'))
 #print(has_path_breadth(graph, 'f', 'k'))
-#print(has_path_breadth_two(graph, 'f', 'k'))
-#print(has_path_depth_two(graph, 'f', 'k'))
-print(has_path_depth_four(graph, 'f', 'j'))
+print('Practice: ', has_path_depth_seven(graph, 'f', 'k'))

@@ -44,7 +44,8 @@ def undirected_path(edges, nodeA, nodeB):
     graph = build_graph(edges)
     return has_path(graph, nodeA, nodeB, set())
 
-print(undirected_path(edges, 'i', 'k'))
+print(undirected_path(edges, 'i', 'j'))
+print()
 
 
 

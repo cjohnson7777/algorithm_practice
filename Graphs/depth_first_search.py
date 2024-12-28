@@ -7,6 +7,7 @@ graph = {
     'f': [],
 }
 
+#iterative depth first search #1
 def iterative_depth_first_print(graph, source):
     stack = [source]
 
@@ -17,14 +18,14 @@ def iterative_depth_first_print(graph, source):
         for neighbor in graph[current]:
             stack.append(neighbor)
 
+#recursive depth first search #1
 def recursive_depth_first_print(graph, source):
     print(source)
 
     for neighbor in graph[source]:
         recursive_depth_first_print(graph, neighbor)
 
-
-
+#iterative depth first search #2
 def iterative_depth_first_search(graph, source):
     stack = [source]
 
@@ -35,32 +36,34 @@ def iterative_depth_first_search(graph, source):
         for neighbor in graph[current]:
             stack.append(neighbor)
 
-
+#recursive depth first search #2
 def recursive_depth_first_search(graph, source):
     print(source)
  
     for neighbor in graph[source]:
         recursive_depth_first_search(graph, neighbor)
 
-
-def recursive_depth_first_search_practice_one(graph, source):
-    print(source)
-    for neighbor in graph[source]:
-        recursive_depth_first_search_practice_one(graph, neighbor)
-
-
-def recursive_depth_first_search_practice_two(graph, source):
-    print(source)
-    for neighbor in graph[source]:
-        recursive_depth_first_search_practice_two(graph, neighbor)
-
-
+#recursive depth first search #3
 def recursive_depth_first_search_practice_three(graph, source):
     print(source)
     for neighbor in graph[source]:
         recursive_depth_first_search_practice_three(graph, neighbor)
 
 
+#recursive depth first search #4
+def recursive_depth_first_search_practice_four(graph, source):
+    print(source)
+    for neighbor in graph[source]:
+        recursive_depth_first_search_practice_four(graph, neighbor)
+
+
+#recursive depth first search #5
+def recursive_depth_first_search_practice_five(graph, source):
+    print(source)
+    for neighbor in graph[source]:
+        recursive_depth_first_search_practice_five(graph, neighbor)
+
+#iterative depth first search #2
 def iterative_depth_first_search_practice_two(graph, source):
     stack = [source]
     
@@ -70,13 +73,13 @@ def iterative_depth_first_search_practice_two(graph, source):
         for neighbor in graph[current]:
             stack.append(neighbor)
 
-def recursive_depth_first_search_practice_four(graph, source):
+#recursive depth first search #6
+def recursive_depth_first_search_practice_six(graph, source):
     print(source)
     for neighbor in graph[source]:
-        recursive_depth_first_search_practice_four(graph, neighbor)
+        recursive_depth_first_search_practice_six(graph, neighbor)
 
-
-
+#iterative depth first search #3
 def iterative_depth_first_search_practice_three(graph, source):
     stack = [source]
 
@@ -86,22 +89,31 @@ def iterative_depth_first_search_practice_three(graph, source):
         for neighbor in graph[current]:
             stack.append(neighbor)
 
-
-def  recursive_depth_first_search_practice_five(graph, source):
+#iterative depth first search #7
+def  recursive_depth_first_search_practice_seven(graph, source):
     print(source)
 
     for neighbor in graph[source]:
-        recursive_depth_first_search_practice_five(neighbor, source)
+        recursive_depth_first_search_practice_seven(neighbor, source)
+
+#recursive depth first search #7
+def recursive_depth_first_search_practice_seven(graph, source):
+    print(source)
+
+    for neighbor in graph[source]:
+        recursive_depth_first_search_practice_seven(graph, neighbor)
 
 
-print('\t Recursive')
-recursive_depth_first_search_practice_four(graph, 'a')
-#recursive_depth_first_print(graph, 'a')
-print('\t Iterative')
-iterative_depth_first_search_practice_three(graph, 'a')
+
+
+print('\t Correct Recursive')
+recursive_depth_first_print(graph, 'a')
+
+#print('\t Iterative')
 #iterative_depth_first_print(graph, 'a')
-#recursive_depth_first_search_practice_one(graph, 'a')
-#print(graph)
-#recursive_depth_first_search_practice_three(graph, 'a')
-#iterative_depth_first_search_practice_two(graph, 'a')
+
+print('\t Practice Recursive')
+recursive_depth_first_search_practice_seven(graph, 'a')
+
+
 

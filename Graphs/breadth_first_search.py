@@ -38,7 +38,7 @@ def breadth_first_search_two(graph, source):
         for neighbor in graph[current]:
             queue.append(neighbor)
 
-
+#breadth first search practice #3
 def breadth_first_search_three(graph, source):
     queue = [source]
 
@@ -48,7 +48,7 @@ def breadth_first_search_three(graph, source):
         for neighbor in graph[current]:
             queue.append(neighbor)
 
-
+#breadth first search practice #4
 def breadth_first_search_four(graph, source):
     queue = [source]
 
@@ -58,8 +58,9 @@ def breadth_first_search_four(graph, source):
         for neighbor in graph[current]:
             queue.append(neighbor)
 
+#breadth first search practice #5
 def breadth_first_search_five(graph, source):
-    queue = []
+    queue = [source]
 
     while queue:
         current = queue.pop(0)
@@ -67,9 +68,25 @@ def breadth_first_search_five(graph, source):
         for neighbor in graph[current]:
             queue.append(neighbor)
 
+#breadth first search practice #6
+def breadth_first_search_6(graph, source):
+    queue = [source]
 
-#breadth_first_print(graph, 'a')
-# print('\t Practice')
-#breadth_first_search(graph, 'a')
-breadth_first_search_four(graph, 'a')
+    while queue:
+        current = queue.pop(0)
+        print(current)
+        
+        for neighbor in graph[current]:
+            queue.append(neighbor)
+
+
+
+
+
+
+
+print('Correct:')
+breadth_first_print(graph, 'a')
+print('Practice:')
+breadth_first_search_6(graph, 'a')
     
