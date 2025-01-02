@@ -1,5 +1,3 @@
-from itertools import count
-
 
 graph = {
     0: [8, 1, 5],
@@ -18,11 +16,10 @@ def connected_components_count(graph):
     count = 0
 
     for node in graph:
-        print(visited)
         if explore(graph, node, visited) == True:
             count += 1
-    
-    return count
+
+    return visited, count
 
 def explore(graph, current, visited):
     if current in visited:
