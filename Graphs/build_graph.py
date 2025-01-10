@@ -80,6 +80,23 @@ def build_graph_five(edges):
     
     return graph
 
+
+#build graph 6
+def build_graph_six(edges):
+    graph = {}
+
+    for a, b in edges:
+        if a not in graph:
+            graph[a] = []
+        if b not in graph:
+            graph[b] = []
+        
+        graph[a].append(b)
+        graph[b].append(a)
+    
+    return graph
+
+
 print('Correct: ', build_graph_one(edges))
-print('Correct: ', build_graph_five(edges))
+print('Practicc: ', build_graph_six(edges))
 

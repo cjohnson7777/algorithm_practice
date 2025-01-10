@@ -1,3 +1,6 @@
+import queue
+
+
 graph = {
     'a': ['c', 'b'],
     'b': ['d'],
@@ -80,13 +83,22 @@ def breadth_first_search_6(graph, source):
             queue.append(neighbor)
 
 
+#breadth first search practice #7
+def breadth_first_search_7(graph, source):
+    queue = [source]
 
-
+    while queue:
+        current = queue.pop(0)
+        print(current)
+        
+        for neighbor in graph[current]:
+            queue.append(neighbor)
+        
 
 
 
 print('Correct:')
 breadth_first_print(graph, 'a')
 print('Practice:')
-breadth_first_search_6(graph, 'a')
+breadth_first_search_7(graph, 'a')
     

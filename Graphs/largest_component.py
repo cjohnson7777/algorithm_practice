@@ -8,7 +8,7 @@ graph = {
     8: [5, 0],
 }
 
-#larget component
+#larget component 1
 def largest_components(graph):
     longest = 0
     visited = set()
@@ -33,5 +33,32 @@ def countSize(graph, node, visited):
 
     return size
     
+#largest component practice 2
+def largest_component_2(graph):
+    visited = set()
+    largest = 0
+
+    for node in graph:
+        size = count_island(graph, node, visited)
+        if size > largest:
+            largest = size
+    
+    return largest
+
+def count_island(graph, node, visited):
+    if node in visited:
+        return 0
+        
+    visited.add(node)
+
+    size = 1
+
+    for neighbor in graph[node]:
+        size += count_island(graph, neighbor, visited)
+    
+    return size
+
+
     
 print('Correct:', largest_components(graph))
+print('Practice: ', largest_component_2(graph))

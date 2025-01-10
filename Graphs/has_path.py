@@ -115,9 +115,18 @@ def has_path_depth_seven(graph, src, dst):
         
     return False
     
-
+#has path depth recursive practice #8
+def has_path_depth_8(graph, src, dst):
+    if src == dst:
+        return True
+    
+    for neighbor in graph[src]:
+        if has_path_depth_8(graph, neighbor, dst) == True:
+            return True
+    
+    return False
 
 
 print('Correct: ', has_path_depth(graph, 'f', 'k'))
 #print(has_path_breadth(graph, 'f', 'k'))
-print('Practice: ', has_path_depth_seven(graph, 'f', 'k'))
+print('Practice: ', has_path_depth_8(graph, 'f', 'k'))

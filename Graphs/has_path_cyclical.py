@@ -40,9 +40,26 @@ def has_path_c_two(graph, src, dst, visited):
     
     return False
 
+#has path cyclical practice #3
+def has_path_c_3(graph, src, dst, visited):
+    if src == dst:
+        return True
+    
+    if src in visited:
+        return False
+    
+    visited.add(src)
+
+    for neighbor in graph[src]:
+        if has_path_c_3(graph, neighbor, dst, visited) == True:
+            return True
+    
+    return False
+
 
 
 #has path cyclical practice #1
 print('Correct: ', has_path_c(graph, 'i', 'k', set()))
-print('Practice: ', has_path_c_two(graph, 'i', 'k', set()))
+print('Practice: ', has_path_c_3(graph, 'i', 'k', set()))
+
 
