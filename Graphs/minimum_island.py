@@ -14,6 +14,7 @@ grid = [
     ['l', 'l', 'w', 'w', 'w'],
 ]
 
+#minumum island 1
 def minimum_island(grid):
     visited = set()
     smallest = math.inf
@@ -51,4 +52,47 @@ def exploreIsland(grid, r, c, visited):
     return size
 
 
+
+
+
+#minimum island 2
+def minimum_island2(matrix):
+    visited = set()
+    minimum = math.inf
+
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])):
+            size = exploreIsland2(matrix, i, j, visited)
+            if size > 0 and size < minimum:
+                minimum = size
+    
+    return minimum
+
+def exploreIsland2(matrix, i, j, visited):
+    rowInBound = i >= 0 and i < len(matrix)
+    colInBound = j >= 0 and j < len(matrix[0])
+
+    if not (rowInBound and colInBound):
+        return 0
+    
+    if matrix[i][j] == 'w':
+        return 0
+    
+    if (i, j) in visited:
+        return 0
+    
+    visited.add((i, j))
+
+    size = 1
+
+    size += exploreIsland2(matrix, i + 1, j, visited)
+    size += exploreIsland2(matrix, i - 1, j, visited)
+    size += exploreIsland2(matrix, i, j + 1, visited)
+    size += exploreIsland2(matrix, i, j - 1, visited)
+
+    return size
+
+
+
 print('Correct: ', minimum_island(grid))
+print('Practice: ', minimum_island2(grid))
