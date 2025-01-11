@@ -34,9 +34,6 @@ def tree_min_iterative(root):
     
     return min
 
-        
-#print(tree_min_iterative(a))
-
 #tree minimun recusive
 def tree_min(root):
     if not root:
@@ -44,4 +41,17 @@ def tree_min(root):
     
     return min(root.value, tree_min(root.left), tree_min(root.right))
 
-print("Correct", tree_min(a))
+#tree min 2
+def tree_min2(root):
+    if not root:
+        return math.inf
+    
+    return min(root.value, tree_min2(root.left), tree_min2(root.right))
+
+
+
+
+#print("Correct Iterative: ", tree_min_iterative(a))
+
+print("Correct Recursive: ", tree_min(a))
+print("Practice Recursive: ", tree_min2(a))

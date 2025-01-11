@@ -16,6 +16,7 @@ c.right = f
 
 n = None
 
+#tree sum breadth first
 def tree_sum_breadth(root):
     sum = 0
 
@@ -35,8 +36,6 @@ def tree_sum_breadth(root):
     
     return sum
 
-print(tree_sum_breadth(n))
-
 #your attempt
 def tree_sum_depth(root):
     if not root:
@@ -54,5 +53,15 @@ def tree_sum(root):
     
     return root.value + tree_sum(root.left) + tree_sum(root.right)
 
+#tree sum recursive 2
+def tree_sum2(root):
+    if not root:
+        return 0
+    
+    return root.value + tree_sum2(root.left) + tree_sum2(root.right)
+  
+
+#print("Correct Breadth:", tree_sum_breadth(n))
 
 print("Correct: ", tree_sum(a))
+print("Practice: ", tree_sum2(a))
