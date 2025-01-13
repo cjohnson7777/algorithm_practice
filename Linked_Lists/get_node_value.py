@@ -14,4 +14,37 @@ c.next = d
 
 #get node value recursive
 def get_node_value(head, index):
-    return
+    if head == None:
+        return None
+    
+    if index == 0:
+        return head.value
+    
+    return get_node_value(head.next, index - 1)
+
+#get node value iterative increment downwards
+# def get_node_value_i(head, index):
+#     current = head
+
+#     while current != None:
+#         if index == 0:
+#             return current.value
+#         index -= 1
+#         current = current.next
+#     return None
+
+#get node value incrementing upwards
+def get_node_value_i(head, index):
+    current = head
+    count  = 0
+
+    while current != None:
+        if count == index:
+            return current.value
+        count += 1
+        current = current.next
+    return None
+    
+
+print(get_node_value(a, 2))
+print(get_node_value_i(a, 2))
