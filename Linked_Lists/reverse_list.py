@@ -11,6 +11,13 @@ a.next = b
 b.next = c
 c.next = d
 
+def print_linked_list(head):
+    current = head
+
+    while current != None:
+        print(current.value)
+        current = current.next
+
 #reverse list iterative
 def reverse_list(head):
     current = head
@@ -20,8 +27,19 @@ def reverse_list(head):
         next = current.next
         current.next = prev
         prev = current
-        current.next = next
+        current = next
     return prev
-        
 
-print(reverse_list(a))    
+#reverse list recursive
+def reverse_list_r(head, prev=None):
+    if head == None:
+        return prev
+    
+    next = head.next
+    head.next = prev
+    
+    return(reverse_list_r(next, head))
+    
+
+
+print_linked_list(reverse_list(a))
