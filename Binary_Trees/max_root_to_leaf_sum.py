@@ -26,15 +26,15 @@ def max_path_root(root):
     
     return root.value + maxPath
 
-
-
-
-
-
 #max path root practice 3
 def max_path_root3(root):
     if not root:
-        return 
+        return -math.inf
+
+    if not (root.left and root.right):
+        return root.value
+
+    return root.value + max(max_path_root3(root.left), max_path_root3(root.right))
     
 
 
