@@ -1,5 +1,3 @@
-import queue
-
 
 graph = {
     'a': ['c', 'b'],
@@ -9,82 +7,20 @@ graph = {
     'e': [],
     'f': [],
 }
-
-def breadth_first_print(graph, source):
+#bread first search
+def breadth_first_search(graph, source):
     queue = [source]
     
     while queue:
         current = queue.pop(0)
         print(current)
-        for neighbor in graph[current]:
-            queue.append(neighbor)
 
-
-#breadth first search practice #1
-def breadth_first_search(graph, source):
-    queue = [source]
-
-    while queue:
-        current = queue.pop(0)
-        print(current)
-        for neighbor in graph[current]:
-            queue.append(neighbor)
-
-#breadth first search practice #2
-def breadth_first_search_two(graph, source):
-    queue = [source]
-
-    while queue:
-        current = queue.pop(0)
-        print(current)
-        
-        for neighbor in graph[current]:
-            queue.append(neighbor)
-
-#breadth first search practice #3
-def breadth_first_search_three(graph, source):
-    queue = [source]
-
-    while queue:
-        current = queue.pop(0)
-        print(current)
-        for neighbor in graph[current]:
-            queue.append(neighbor)
-
-#breadth first search practice #4
-def breadth_first_search_four(graph, source):
-    queue = [source]
-
-    while queue:
-        current = queue.pop(0)
-        print(current)
-        for neighbor in graph[current]:
-            queue.append(neighbor)
-
-#breadth first search practice #5
-def breadth_first_search_five(graph, source):
-    queue = [source]
-
-    while queue:
-        current = queue.pop(0)
-        print(current)
-        for neighbor in graph[current]:
-            queue.append(neighbor)
-
-#breadth first search practice #6
-def breadth_first_search_6(graph, source):
-    queue = [source]
-
-    while queue:
-        current = queue.pop(0)
-        print(current)
-        
         for neighbor in graph[current]:
             queue.append(neighbor)
 
 
 #breadth first search practice #7
-def breadth_first_search_7(graph, source):
+def breadth_first_search7(graph, source):
     queue = [source]
 
     while queue:
@@ -96,9 +32,8 @@ def breadth_first_search_7(graph, source):
         
 
 
-
 print('Correct:')
-breadth_first_print(graph, 'a')
+breadth_first_search(graph, 'a')
 print('Practice:')
-breadth_first_search_7(graph, 'a')
+breadth_first_search7(graph, 'a')
     

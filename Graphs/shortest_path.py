@@ -69,9 +69,26 @@ def shortest_path_2(graph, nodeA, nodeB):
                 visited.add(neighbor)
                 queue.append([neighbor, distance + 1])
 
+#shortest path 3
+def shortest_path_3(graph, nodeA, nodeB):
+    distance = 0
+    visited = set(nodeA)
+    queue = [[nodeA, distance]]
+
+    while queue:
+        node, distance = queue.pop(0)
+
+        if node == nodeB:
+            return node, distance
+        
+        for neighbor in graph[node]:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append([neighbor, distance + 1])
+
 
 print('Correct: ', shortest_path(edges, 'w', 'z'))
-print('Practice: ', shortest_path_2(graph1, 'w', 'z'))
+print('Practice: ', shortest_path_3(graph1, 'w', 'z'))
      
 
 

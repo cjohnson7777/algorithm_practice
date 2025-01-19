@@ -34,24 +34,49 @@ def tree_min_iterative(root):
     
     return min
 
-#tree minimun recusive
+#tree min stack iterative practice 2
+def tree_min_i_2(root):
+    if not root:
+        return None
+    
+    min = math.inf
+    stack = [root]
+
+    while stack:
+        current = stack.pop()
+
+        if current.value < min:
+            min = current.value
+        
+        if current.left:
+            stack.append(current.left)
+        if current.right:
+            stack.append(current.right)
+    
+    return min
+            
+
+
+#tree min recusive
 def tree_min(root):
     if not root:
         return math.inf
     
     return min(root.value, tree_min(root.left), tree_min(root.right))
 
-#tree min 2
-def tree_min2(root):
+
+#tree min recursive practice 3
+def tree_min3(root):
     if not root:
         return math.inf
     
-    return min(root.value, tree_min2(root.left), tree_min2(root.right))
+    return min(root.value, tree_min3(root.left), tree_min3(root.right))
+    
 
 
+print("Correct Iterative: ", tree_min_iterative(a))
+print("Practice Iterative: ", tree_min_i_2(a))
 
-
-#print("Correct Iterative: ", tree_min_iterative(a))
 
 print("Correct Recursive: ", tree_min(a))
-print("Practice Recursive: ", tree_min2(a))
+print("Practice Recursive: ", tree_min3(a))

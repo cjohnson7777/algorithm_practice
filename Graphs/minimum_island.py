@@ -51,10 +51,6 @@ def exploreIsland(grid, r, c, visited):
 
     return size
 
-
-
-
-
 #minimum island 2
 def minimum_island2(matrix):
     visited = set()

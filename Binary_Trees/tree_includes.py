@@ -32,30 +32,30 @@ def tree_includes_breadth(root, node):
     
     return False
 
-#recursive depth first tree includes
-def tree_includes_depth(root, target):
+#depth first recursive tree includes
+def tree_includes_r(root, target):
     if not root:
         return False
     
     if root.value == target:
         return True
     
-    return (tree_includes_depth(root.left, target) or tree_includes_depth(root.right, target))
+    return (tree_includes_r(root.left, target) or tree_includes_r(root.right, target))
 
-#tree includes recursive 2
-def tree_includes2(root, target):
+#tree includes recursive practice 3
+def tree_includes_r3(root, target):
     if not root:
         return False
     
     if root.value == target:
         return True
     
-    return(tree_includes2(root.left, target) or tree_includes2(root.right, target))
-    
+    return tree_includes_r3(root.left, target) or tree_includes_r3(root.right, target)
+
 
 
 #print("Correct: ", tree_includes_breadth(a, 'q'))
 
-print("Correct: ", tree_includes_depth(a, 'b'))
-print("Practice: ", tree_includes2(a, 'b'))
+print("Correct: ", tree_includes_r(a, 'b'))
+print("Practice: ", tree_includes_r3(a, 'b'))
 

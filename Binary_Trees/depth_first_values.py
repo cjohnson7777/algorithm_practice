@@ -55,7 +55,7 @@ def depth_first_values_simple(root):
     return [root.value, *leftValues, *rightValues]
 
 
-#depth first search recursively 2
+#depth first search recursively practice 2
 def depth_first_values_recursive2(root):
     if not root:
         return None
@@ -67,15 +67,16 @@ def depth_first_values_recursive2(root):
     if root.right:
         depth_first_values_recursive2(root.right)
 
-#depth first practice simple 2
-def depth_first_values_simple2(root):
+#depth first practice simple 3
+def depth_first_values_simple3(root):
     if not root:
         return []
     
-    leftValues = depth_first_values_simple2(root.left)
-    rightValues = depth_first_values_simple2(root.right)
+    leftValues = depth_first_values_simple3(root.left)
+    rightValues = depth_first_values_simple3(root.right)
 
     return [root.value, *leftValues, *rightValues]
+
 
 
 #print("Iterative: ", depth_first_values(n))
@@ -83,7 +84,6 @@ def depth_first_values_simple2(root):
 print("\t Correct")
 depth_first_values_recursive(a)
 print("\t Practice")
-depth_first_values_recursive2(a)
-
+print(depth_first_values_simple3(a))
 # print("Correct (simple): ", depth_first_values_simple(a))
-# print("Practice (simple): ", depth_first_values_simple2(a))
+# print("Practice (simple): ", depth_first_values_simple3(a))

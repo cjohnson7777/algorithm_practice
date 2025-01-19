@@ -14,7 +14,7 @@ b.left = d
 b.right = e
 c.right = f
 
-#max path root 1
+#max path root
 def max_path_root(root):
     if not root:
         return -math.inf
@@ -26,18 +26,17 @@ def max_path_root(root):
     
     return root.value + maxPath
 
-#max path root 2
-def max_path_root2(root):
+
+
+
+
+
+#max path root practice 3
+def max_path_root3(root):
     if not root:
-        return -math.inf
+        return 
     
-    if not(root.left and root.right):
-        return root.value
-    
-    maxPath = max(max_path_root2(root.left), max_path_root2(root.right))
-    
-    return root.value + maxPath
 
 
 print("Correct: ", max_path_root(a))
-print("Practice:", max_path_root2(a))
+print("Practice:", max_path_root3(a))

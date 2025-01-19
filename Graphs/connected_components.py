@@ -84,9 +84,34 @@ def dfs_2(adj_list1, node, visited):
             visited[neighbor] = True
             dfs_2(adj_list1, neighbor, visited)
 
+#connected components for leetcode #3
+def connected_components_leetcode_3(edges, n):
+    adj_list = [[] for _ in range(n)]
+    visited = [False] * n
+    count = 0
+
+    for a, b in edges:
+        adj_list[a].append(b)
+        adj_list[b].append(a)
+    
+    for node in range(n):
+        if not visited[node]:
+            visited[node] = True
+            dfs_3(adj_list, node, visited)
+            count += 1
+
+    return count
+
+def dfs_3(adj_list, node, visited):
+    for neighbor in adj_list[node]:
+        if not visited[neighbor]:
+            visited[neighbor] = True
+            dfs_3(adj_list, neighbor, visited)
+
 
 #connected components count 2
 def connected_components_practice_2(graph):
+
     count = 0
     visited = set()
 
@@ -207,4 +232,4 @@ def explore_6(graph, node, visited):
 # print('Practice: ', connected_components_count_6(graph))
 
 print("Leetcode: ", connected_components_leetcode(edges, n))
-print("Leetcode: ", connected_components_leetcode_2(edges, n))
+print("Leetcode Practice: ", connected_components_leetcode_3(edges, n))
