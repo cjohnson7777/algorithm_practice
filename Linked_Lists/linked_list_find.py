@@ -35,8 +35,35 @@ def linked_list_find_r(head, target):
     
     return linked_list_find_r(head.next, target)
 
+#linked list find recursive practice 2
+def linked_list_find_r2(head, target):
+    if not head:
+        return False
+    
+    if head.value == target:
+        return True
+    
+    return linked_list_find_r2(head.next, target)
+
+#linked list find iterative practice 2
+def linked_list_find_i2(head, target):
+    if not head:
+        return False
+    
+    current = head
+
+    while current != None:
+        if current.value == target:
+            return True
+        
+        current = current.next
+    
+    return False
 
 
-
+print("Correct: ")
 print(linked_list_find(a, 'C'))
 print(linked_list_find_r(a, 'C'))
+print("Practice: ")
+print(linked_list_find_r2(a, 'C'))
+print(linked_list_find_i2(a, 'C'))

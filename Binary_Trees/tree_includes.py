@@ -1,3 +1,4 @@
+import queue
 from node_class import Node
 
 a = Node('a')
@@ -32,6 +33,26 @@ def tree_includes_breadth(root, node):
     
     return False
 
+#breadth first practice 2
+def tree_includes_breadth2(root, target):
+    if not root:
+        return False
+    
+    queue = [root]
+
+    while queue:
+        current = queue.pop(0)
+        if current.value == target:
+            return True
+        
+        if current.left:
+            queue.append(current.left)
+        if current.right:
+            queue.append(current.right)
+
+    return False
+
+
 #depth first recursive tree includes
 def tree_includes_r(root, target):
     if not root:
@@ -42,20 +63,23 @@ def tree_includes_r(root, target):
     
     return (tree_includes_r(root.left, target) or tree_includes_r(root.right, target))
 
-#tree includes recursive practice 3
-def tree_includes_r3(root, target):
+#tree includes recursive practice 4
+def tree_includes_r4(root, target):
     if not root:
         return False
     
     if root.value == target:
         return True
     
-    return tree_includes_r3(root.left, target) or tree_includes_r3(root.right, target)
+    return tree_includes_r4(root.left, target) or tree_includes_r4(root.right, target)
 
 
 
-#print("Correct: ", tree_includes_breadth(a, 'q'))
+
+print("Correct: ", tree_includes_breadth(a, 'c'))
+print("Practice: ", tree_includes_breadth2(a, 'c'))
+
 
 print("Correct: ", tree_includes_r(a, 'b'))
-print("Practice: ", tree_includes_r3(a, 'b'))
+print("Practice: ", tree_includes_r4(a, 'b'))
 

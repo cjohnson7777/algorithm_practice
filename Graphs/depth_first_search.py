@@ -35,25 +35,29 @@ def depth_first_search_i_4(graph, source):
         for neighbor in graph[current]:
             stack.append(neighbor)
 
-#recursive depth first practice #9
-def depth_first_search_r_9(graph, source):
+#recursive depth first practice #10
+def depth_first_search_r_10(graph, source):
     print(source)
-    
+
     for neighbor in graph[source]:
-        depth_first_search_r_9(graph, neighbor)
+        depth_first_search_r_10(graph, neighbor)
+
+
+
+
 
 
 print('\t Correct Recursive')
 depth_first_search_r(graph, 'a')
 
 print('\t Practice Recursive')
-depth_first_search_r_9(graph, 'a')
+depth_first_search_r_10(graph, 'a')
 
-print('\t Iterative Correct')
-depth_first_search_i(graph, 'a')
+# print('\t Iterative Correct')
+# depth_first_search_i(graph, 'a')
 
-print('\t Iterative Practice')
-depth_first_search_i_4(graph, 'a')
+# print('\t Iterative Practice')
+# depth_first_search_i_4(graph, 'a')
 
 
 

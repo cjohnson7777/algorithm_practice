@@ -8,7 +8,7 @@ graph = {
         'n': ['o']
 }
 
-#has path cyclical
+#has path cyclical recursive
 def has_path_c(graph, src, dst, visited):    
     if src == dst:
         return True
@@ -24,57 +24,28 @@ def has_path_c(graph, src, dst, visited):
         
     return False
 
-#has path cyclical practice #2
-def has_path_c_two(graph, src, dst, visited):   
+#has path cyclical recursive practice #5
+def has_path_5(graph, src, dst, vistited):
     if src == dst:
         return True
     
-    if src in visited:
+    if src in vistited:
         return False
     
-    visited.add(src)
+    vistited.add(src)
 
     for neighbor in graph[src]:
-        if has_path_c_two(graph, neighbor, dst, visited) == True:
-            return True
-    
-    return False
-
-#has path cyclical practice #3
-def has_path_c_3(graph, src, dst, visited):
-    if src == dst:
-        return True
-    
-    if src in visited:
-        return False
-    
-    visited.add(src)
-
-    for neighbor in graph[src]:
-        if has_path_c_3(graph, neighbor, dst, visited) == True:
-            return True
-    
-    return False
-
-#has path cyclical practice #4
-def has_path_c_4(graph, src, dst, visited):
-    if src == dst:
-        return True
-    
-    if src in visited:
-        return False
-    
-    visited.add(src)
-
-    for neighbor in graph[src]:
-        if (has_path_c(graph, neighbor, dst, visited)) == True:
+        if has_path_5(graph, neighbor, dst, vistited) == True:
             return True
     
     return False
 
 
-#has path cyclical practice #1
+
+
+
+
 print('Correct: ', has_path_c(graph, 'i', 'k', set()))
-print('Practice: ', has_path_c_4(graph, 'i', 'k', set()))
+print('Practice: ', has_path_5(graph, 'i', 'k', set()))
 
 
