@@ -1,5 +1,6 @@
-product = 2
 
-for i in range(3):
-    product *= i
-    print(product)
+def encode(strs):
+    return "#".join(strs)
+
+strs = ["neet","code","love","you"]
+print(encode(strs))
