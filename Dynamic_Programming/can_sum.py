@@ -31,7 +31,10 @@
 #Time O(n*m)
 #Space O(m)
 #memoized attempt
-def can_sum(target, nums, memo={}):
+def can_sum(target, nums, memo=None):
+    if memo is None:
+        memo = {}
+
     if target in memo:
         return memo[target]
     
@@ -42,7 +45,7 @@ def can_sum(target, nums, memo={}):
         return False
             
     for num in nums:
-        if can_sum(target - num, nums) == True:
+        if can_sum(target - num, nums, memo) == True:
             memo[target] = True
             return True
         
@@ -50,10 +53,9 @@ def can_sum(target, nums, memo={}):
     return False
 
 
-print(can_sum(7, [2, 4]))
-
 print(can_sum(7, [5, 3, 4, 7]))
 print(can_sum(7, [2, 3]))
+print(can_sum(7, [2, 4]))
 print(can_sum(8, [2, 3, 5]))
 print(can_sum(300, [7, 14]))
 
