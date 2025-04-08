@@ -18,7 +18,7 @@ def make_itinerary(flights, start):
     for origin, dest in flights:
         heapq.heappush(graph[origin], dest)
 
-    visit(start)
+    visit(start, graph, itinerary)
     itinerary.reverse()
 
     if len(itinerary) == len(flights) + 1:
@@ -26,11 +26,10 @@ def make_itinerary(flights, start):
     else:
         return None
 
-
 def visit(airport, graph, itinerary):
     while graph[airport]:
         next_stop = heapq.heappop(graph[airport])
-        visit(next_stop)
+        visit(next_stop, graph, itinerary)
     itinerary.append(airport)
 
 
