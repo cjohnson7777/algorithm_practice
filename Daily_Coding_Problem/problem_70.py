@@ -14,11 +14,6 @@ def nth_perfect_number(n):
     
     return num
 
+for i in range(1, 6):
+    print(nth_perfect_number(i))
 
-
-print(nth_perfect_number(1))
-print(nth_perfect_number(2))
-print(nth_perfect_number(3))
-print(nth_perfect_number(4))
-print(nth_perfect_number(5))
-print(nth_perfect_number(6))
