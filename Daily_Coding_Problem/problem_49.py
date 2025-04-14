@@ -5,3 +5,16 @@
 # Given the array [-5, -1, -8, -9], the maximum sum would be 0, since we would not take any elements.
 
 # Do this in O(N) time.
+
+
+def max_sum(nums):
+    l = 0
+    maxSum = 0
+
+    for r in range(len(nums)):
+        currentSum += nums[r]
+
+        maxSum = max(currentSum, maxSum)
+
+        if nums[r] < 0:
+            pass
