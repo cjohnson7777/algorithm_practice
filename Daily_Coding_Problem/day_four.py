@@ -4,7 +4,18 @@
 
 
 def first_missing_int(nums):
-    flagged = False
+    n = len(nums)
+    for i in range(len(nums)):
+        while 1 <= nums[i] <= n and nums[nums[i] - 1] != nums[i]:
+            correct_index = nums[i] - 1
+            nums[i], nums[correct_index] = nums[correct_index], nums[i]
 
-    for num in nums:
-        pass
+    for i in range(n):
+        if nums[i] != i + 1:
+            return i + 1
+        
+    return n + 1
+
+nums = [3, 4, -1, 1]
+print(first_missing_int(nums))
+
