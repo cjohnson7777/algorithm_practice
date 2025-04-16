@@ -7,14 +7,17 @@
 # Do this in O(N) time.
 
 
-def max_sum(nums):
-    l = 0
-    maxSum = 0
+def max_contiguous_sum(nums):
+    current_max = 0
+    global_max = 0
 
-    for r in range(len(nums)):
-        currentSum += nums[r]
+    for num in nums:
+        current_max = max(num, current_max + num)
+        global_max = max(global_max, current_max)
 
-        maxSum = max(currentSum, maxSum)
+    return global_max
 
-        if nums[r] < 0:
-            pass
+nums = [34, -50, 42, 14, -5, 86]
+print(max_contiguous_sum(nums))
+
+print(max_contiguous_sum([-5, -1, -8, -9]))
