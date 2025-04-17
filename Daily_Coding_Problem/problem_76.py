@@ -23,3 +23,35 @@
 # wvu
 # tsr
 # Your function should return 3, since we would need to remove all the columns to order it.
+
+def remove_cols(matrix):
+    if len(matrix) < 2:
+        return 0
+
+    cols = len(matrix[0])
+    rows = len(matrix)
+    count = 0
+
+    for i in range(cols):
+        prev = matrix[0][i]
+
+        for j in range(rows):
+            if ord(prev) > ord(matrix[j][i]):
+                count += 1
+                break
+            prev = matrix[j][i]
+
+    return count
+
+
+matrix = [  ['c', 'b', 'a'],
+            ['d', 'a', 'f'],
+            ['g', 'h', 'i'] 
+        ]
+
+matrix2 = [ ['x', 'y', 'z'],
+            ['w', 'v', 'u'],
+            ['t', 's', 'r'] 
+        ]
+
+print(remove_cols(matrix2))
