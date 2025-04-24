@@ -1,4 +1,4 @@
-#[EASY] Given the head of a singly linked list, reverse it in-place.
+#[EASY][SOLVED] Given the head of a singly linked list, reverse it in-place.
 
 class Node:
     def __init__(self, val, next=None):
