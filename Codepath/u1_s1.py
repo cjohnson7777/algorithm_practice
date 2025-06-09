@@ -41,7 +41,7 @@ def sum_honey(hunny_jars):
     return honey
 	
 hunny_jars = [2, 3, 4, 5]
-print(sum_honey(hunny_jars))
+#print(sum_honey(hunny_jars))
 
 
 def doubled(hunny_jars):
@@ -68,13 +68,13 @@ def print_todo_list(tasks):
         print(f"{idx}. {task}")
 
 task = ["Count all the bees in the hive", "Chase all the clouds from the sky", "Think", "Stoutness Exercises"]
-print_todo_list(task)        
+#print_todo_list(task)        
 
 def can_pair(item_quantities):
     return all(q % 2 == 0 for q in item_quantities)
 
 item_quantities = [2, 4, 6, 8]
-print(can_pair(item_quantities))
+#print(can_pair(item_quantities))
 
 import math
 
@@ -93,17 +93,14 @@ def tiggerfy(s):
     forbidden = set('tiger')
     return ''.join(c for c in s if c.lower() not in forbidden)
 
-s = "suspicerous"
-print(tiggerfy(s))
+#s = "suspicerous"
+#print(tiggerfy(s))
 
 def locate_thistles(items):
     return [i for i, item in enumerate(items) if item == "thistle"]
 
 items = ["thistle", "stick", "carrot", "thistle", "eeyore's tail"]
-print(locate_thistles(items))
-
-
-
+#print(locate_thistles(items))
 
 
 
