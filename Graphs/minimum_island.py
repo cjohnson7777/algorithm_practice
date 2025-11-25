@@ -14,7 +14,7 @@ grid = [
     ['l', 'l', 'w', 'w', 'w'],
 ]
 
-#minumum island 1
+#minumum island 
 def minimum_island(grid):
     visited = set()
     smallest = math.inf
@@ -51,7 +51,7 @@ def exploreIsland(grid, r, c, visited):
 
     return size
 
-#minimum island 2
+#minimum island 
 def minimum_island2(matrix):
     visited = set()
     minimum = math.inf

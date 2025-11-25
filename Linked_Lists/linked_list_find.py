@@ -35,7 +35,7 @@ def linked_list_find_r(head, target):
     
     return linked_list_find_r(head.next, target)
 
-#linked list find recursive practice 2
+#linked list find recursive practice 
 def linked_list_find_r2(head, target):
     if not head:
         return False
@@ -45,7 +45,7 @@ def linked_list_find_r2(head, target):
     
     return linked_list_find_r2(head.next, target)
 
-#linked list find iterative practice 2
+#linked list find iterative practice 
 def linked_list_find_i2(head, target):
     if not head:
         return False

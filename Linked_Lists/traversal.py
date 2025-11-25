@@ -34,7 +34,7 @@ def print_linked_list_r_r(head):
     print(head.value)
 
 
-#print linked list iteravive practice 2
+#print linked list iteravive practice 
 def print_linked_list_i2(head):
     if not head:
         return None
@@ -45,7 +45,7 @@ def print_linked_list_i2(head):
         print(current.value)
         current = current.next
 
-#print linked list recursively practice 2
+#print linked list recursively practice 
 def print_linked_list_r2(head):
     if not head:
         return

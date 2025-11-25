@@ -34,7 +34,7 @@ def tree_min_iterative(root):
     
     return min
 
-#tree min stack iterative practice 2
+#tree min stack iterative practice 
 def tree_min_i_2(root):
     if not root:
         return None
@@ -56,7 +56,6 @@ def tree_min_i_2(root):
     return min
             
 
-
 #tree min recusive
 def tree_min(root):
     if not root:
@@ -65,7 +64,7 @@ def tree_min(root):
     return min(root.value, tree_min(root.left), tree_min(root.right))
 
 
-#tree min recursive practice 3
+#tree min recursive practice 
 def tree_min3(root):
     if not root:
         return math.inf

@@ -24,7 +24,7 @@ def has_path_c(graph, src, dst, visited):
         
     return False
 
-#has path cyclical recursive practice #5
+#has path cyclical recursive practice
 def has_path_5(graph, src, dst, vistited):
     if src == dst:
         return True

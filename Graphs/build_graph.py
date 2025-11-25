@@ -21,7 +21,7 @@ def build_graph_one(edges):
 
     return graph 
 
-#build graph practice #2
+#build graph practice
 def build_graph_two(edges):
     graph = {}
 
@@ -35,68 +35,7 @@ def build_graph_two(edges):
 
     return graph
 
-#build graph practice #3
-def build_graph_three(edges):
-    graph = {}
-
-    for a, b in edges:
-        if a not in graph:
-            graph[a] = []
-        if b not in graph:
-            graph[b] = []
-        graph[a].append(b)
-        graph[b].append(a)
-    
-    return graph
-
-#build graph practice #4
-def build_graph_four(edges):
-    graph = {}
-
-    for a, b in edges:
-        if a not in graph:
-            graph[a] = []
-        if b not in graph:
-            graph[b] = []
-        
-        graph[a].append(b)
-        graph[b].append(a)
-
-    return graph
-
-
-#build graph practice #5
-def build_graph_five(edges):
-    graph = {}
-
-    for a, b in edges:
-        if a not in graph:
-            graph[a] = []
-        if b not in graph:
-            graph[b] = []
-        
-        graph[a].append(b)
-        graph[b].append(a)
-    
-    return graph
-
-
-#build graph 6
-def build_graph_six(edges):
-    graph = {}
-
-    for a, b in edges:
-        if a not in graph:
-            graph[a] = []
-        if b not in graph:
-            graph[b] = []
-        
-        graph[a].append(b)
-        graph[b].append(a)
-    
-    return graph
 
 
 print('Correct: ', build_graph_one(edges))
-print('Practicc: ', build_graph_six(edges))
 

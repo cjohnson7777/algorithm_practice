@@ -36,7 +36,7 @@ def tree_sum_breadth(root):
     
     return sum
 
-#tree sum breath practice 2
+#tree sum breath practice 
 def tree_sum_b2(root):
     if not root:
         return 0
@@ -62,7 +62,7 @@ def tree_sum(root):
     
     return root.value + tree_sum(root.left) + tree_sum(root.right)
 
-#tree sum recursive practice 3
+#tree sum recursive practice 
 def tree_sum3(root):
     if not root:
         return 0
@@ -78,13 +78,3 @@ print("Correct: ", tree_sum(a))
 print("Practice: ", tree_sum3(a))
 
 
-
-#your attempt
-# def tree_sum_depth(root):
-#     if not root:
-#         return 0
-#     sum = 0
-#     sum += root.value + tree_sum_depth(root.left) + tree_sum_depth(root.right)
-#     return sum
-
-#print(tree_sum_depth(a))

@@ -8,7 +8,7 @@ graph = {
     8: [5, 0],
 }
 
-#larget component 1
+#larget component 
 def largest_components(graph):
     longest = 0
     visited = set()
@@ -33,7 +33,7 @@ def countSize(graph, node, visited):
 
     return size
     
-#largest component practice 2
+#largest component practice 
 def largest_component_2(graph):
     visited = set()
     largest = 0

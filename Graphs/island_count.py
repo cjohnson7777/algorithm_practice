@@ -44,7 +44,7 @@ def explore_island(matrix, i, j, visited):
     return True
 
 
-#island count practice 3
+#island count practice 
 def island_count_3(grid):
     visited = set()
     count = 0
